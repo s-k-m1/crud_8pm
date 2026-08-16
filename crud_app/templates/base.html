@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-info navbar-dark">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="">
+                <img src="{% static "images/sms.png" %}" alt="Logo"
+                    style="height:40px; width:40px; border-radius:60%;">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'index_page' %}">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'add_student' %}">
+                            AddStudent
+                        </a>
+                    </li>
+
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'student_list' %}">
+                            StudentList
+                        </a>
+                    </li>
+
+                    <li class="nav-item"> <a class="nav-link" href="">
+                            LearnORMQuery
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Main Content Start -->
+    <div class="container my-5">
+        <h1 class="text-center">
+            Welcome to Student Management System
+        </h1>
+
+        <p class="text-center">
+            Practice real-world CRUD operations and strengthen your Django development skills.
+        </p>
+    </div>
+    <!-- Main Content End -->
+
+{% block content %}
+
+{% endblock content %}
+
+
+    <!-- Footer Start -->
+    <footer>
+        <p class="bg-warning text-center text-white py-3">
+            Designed by Mr:Skm © 2026
+        </p>
+    </footer>
+    <!-- Footer End -->
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/HideMessage.js"></script>
+
+</body>
+
+</html>

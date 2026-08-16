@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+
+                <h3 class="bg-primary text-center text-white py-3 rounded">
+                    Add Student
+                </h3>
+
+                <form method = "POST" action="{% url 'add_student' %}">
+                    {% csrf_token %}
+                    
+
+                    <!-- First Name -->
+                    <div class="mb-3">
+                        <label class="form-label">First Name</label>
+                        <input type="text" name="first_name" class="form-control" required>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="mb-3">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" name="last_name" class="form-control" required>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="mb-3">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" name="phone_number" class="form-control" required>
+                    </div>
+
+                    <!-- Age -->
+                    <div class="mb-3">
+                        <label class="form-label">Age</label>
+                        <input type="number" name="age" min="0" max="100" class="form-control" required>
+                    </div>
+
+                    <!-- Gender -->
+                    <div class="mb-3">
+                        <label class="form-label">Gender</label>
+
+                        <div class="d-flex gap-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" value="male" checked>
+                                <label class="form-check-label">Male</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" value="female">
+                                <label class="form-check-label">Female</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" value="others">
+                                <label class="form-check-label">Others</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subject -->
+                    <div class="mb-3">
+                        <label class="form-label">Subjects</label>
+
+                        <select name="subjects" class="form-select">
+                            <option selected disabled>Select Your Subject</option>
+                            <option value="java">Java</option>
+                            <option value="python">Python</option>
+                            <option value="mern">MERN</option>
+                            <option value="react-js">React JS</option>
+                        </select>
+                    </div>
+
+                    <!-- Bio -->
+                    <div class="mb-3">
+                        <label class="form-label">Bio</label>
+                        <textarea
+                            name="bio"
+                            class="form-control"
+                            rows="4"
+                            placeholder="Write something about yourself..."
+                            required>
+                        </textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary w-100">
+                        Submit
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock content %}
